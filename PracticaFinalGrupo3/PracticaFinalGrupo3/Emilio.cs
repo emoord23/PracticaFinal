@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.cli
 
 namespace PracticaFinalGrupo3
 {
@@ -16,5 +18,6 @@ namespace PracticaFinalGrupo3
         {
             InitializeComponent();
         }
+
     }
 }
