@@ -54,6 +54,7 @@
     <Compile Include="Andres.Designer.cs">
       <DependentUpon>Andres.cs</DependentUpon>
     </Compile>
+    <Compile Include="BdComun.cs" />
     <Compile Include="Emilio.cs">
       <SubType>Form</SubType>
     </Compile>
