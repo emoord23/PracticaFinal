@@ -13,6 +13,8 @@ namespace PracticaFinalGrupo3
 {
     public partial class Andres : Form
     {
+        MySqlConnection conn;
+        bool conectado = false;
 
         public Andres()
         {
@@ -23,14 +25,42 @@ namespace PracticaFinalGrupo3
         {
             try
             {
-                BdComun.obtenerConexion();
-                MessageBox.Show("Conexion realizada");
+                conn = BdComun.obtenerConexion();
+                if (conn != null)
+                {
+                    conectado = true;
+                    buttonConectar.Text = "Conexión establecida";
+                    buttonConectar.BackColor = Color.LightGreen;
+                }
             }
             catch
             {
-                MessageBox.Show("Conexion rechazada");
+                buttonConectar.Text = "Conexión rechazada";
+                buttonConectar.BackColor = Color.Red;
             }
+        }
 
+        private void buttonConsulta_Click(object sender, EventArgs e)
+        {
+            if (conectado)
+            {
+                MySqlCommand cmd;
+                MySqlDataReader reader;
+                try
+                {
+                    cmd = new MySqlCommand("SELECT socio.nombre, socio.direccion, socio.telefono FROM socio", conn);
+                    reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        dataGridView1.Rows.Add(reader.GetValue(0), reader.GetValue(1), reader.GetValue(2));
+                    }
+                }
+                catch (Exception exception)
+                {
+                    MessageBox.Show("Error: " + exception.Message);
+                }
+             }
         }
     }
 }
