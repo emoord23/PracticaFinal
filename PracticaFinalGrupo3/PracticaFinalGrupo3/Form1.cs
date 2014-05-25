@@ -7,14 +7,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data;
+using MySql.Data.MySqlClient;
 
 namespace PracticaFinalGrupo3
 {
     public partial class Form1 : Form
     {
+        String cadenaConexion = "Server=" + "localhost" + ";Port=" + "3306" + ";Database=" + "biblioteca" + ";Uid=" + "root" + ";Pwd=" + "" + ";";
+
         public Form1()
         {
             InitializeComponent();
+        }
+
+        public MySqlDataAdapter conectaALaBaseDeDatos(String query)
+        {
+            MySqlConnection conexion = new MySqlConnection();
+            conexion.ConnectionString = cadenaConexion;
+            try
+            {
+                conexion.Open();
+                MySqlDataAdapter adaptadorDatos = new MySqlDataAdapter(query, conexion);
+                return adaptadorDatos;
+            }
+            catch {
+                return null;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
