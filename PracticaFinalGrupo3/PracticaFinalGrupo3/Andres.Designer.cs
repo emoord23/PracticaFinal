@@ -29,91 +29,37 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.buttonConectar = new System.Windows.Forms.Button();
             this.buttonConsulta = new System.Windows.Forms.Button();
+            this.rbDPersonales = new System.Windows.Forms.RadioButton();
+            this.rbPrestamos = new System.Windows.Forms.RadioButton();
+            this.rbMultas = new System.Windows.Forms.RadioButton();
+            this.rbDatosLibros = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
             this.dataGridView1.Location = new System.Drawing.Point(306, 94);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(591, 557);
+            this.dataGridView1.Size = new System.Drawing.Size(1184, 557);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Socio";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Direccion";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Telefono";
-            this.Column3.Name = "Column3";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18.09424F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(121, 9);
+            this.label2.Location = new System.Drawing.Point(378, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(702, 55);
             this.label2.TabIndex = 3;
             this.label2.Text = "Consulta de datos de los socios";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(12, 230);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(92, 30);
-            this.radioButton1.TabIndex = 4;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Socio";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(12, 266);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 30);
-            this.radioButton2.TabIndex = 5;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Libro";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(12, 302);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(89, 30);
-            this.radioButton3.TabIndex = 6;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Autor";
-            this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -123,14 +69,6 @@
             this.label1.Size = new System.Drawing.Size(110, 26);
             this.label1.TabIndex = 7;
             this.label1.Text = "Filtrar por:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(17, 357);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(273, 33);
-            this.comboBox1.TabIndex = 8;
             // 
             // label3
             // 
@@ -142,12 +80,15 @@
             // 
             // buttonConectar
             // 
+            this.buttonConectar.BackColor = System.Drawing.Color.Red;
+            this.buttonConectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.93194F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConectar.ForeColor = System.Drawing.SystemColors.Control;
             this.buttonConectar.Location = new System.Drawing.Point(12, 94);
             this.buttonConectar.Name = "buttonConectar";
             this.buttonConectar.Size = new System.Drawing.Size(278, 67);
             this.buttonConectar.TabIndex = 10;
             this.buttonConectar.Text = "Conectar";
-            this.buttonConectar.UseVisualStyleBackColor = true;
+            this.buttonConectar.UseVisualStyleBackColor = false;
             this.buttonConectar.Click += new System.EventHandler(this.buttonConectar_Click);
             // 
             // buttonConsulta
@@ -160,19 +101,63 @@
             this.buttonConsulta.UseVisualStyleBackColor = true;
             this.buttonConsulta.Click += new System.EventHandler(this.buttonConsulta_Click);
             // 
+            // rbDPersonales
+            // 
+            this.rbDPersonales.AutoSize = true;
+            this.rbDPersonales.Checked = true;
+            this.rbDPersonales.Location = new System.Drawing.Point(17, 256);
+            this.rbDPersonales.Name = "rbDPersonales";
+            this.rbDPersonales.Size = new System.Drawing.Size(206, 30);
+            this.rbDPersonales.TabIndex = 12;
+            this.rbDPersonales.TabStop = true;
+            this.rbDPersonales.Text = "Datos personales";
+            this.rbDPersonales.UseVisualStyleBackColor = true;
+            this.rbDPersonales.CheckedChanged += new System.EventHandler(this.rbDPersonales_CheckedChanged);
+            // 
+            // rbPrestamos
+            // 
+            this.rbPrestamos.AutoSize = true;
+            this.rbPrestamos.Location = new System.Drawing.Point(17, 220);
+            this.rbPrestamos.Name = "rbPrestamos";
+            this.rbPrestamos.Size = new System.Drawing.Size(142, 30);
+            this.rbPrestamos.TabIndex = 13;
+            this.rbPrestamos.Text = "Prestamos";
+            this.rbPrestamos.UseVisualStyleBackColor = true;
+            // 
+            // rbMultas
+            // 
+            this.rbMultas.AutoSize = true;
+            this.rbMultas.Location = new System.Drawing.Point(17, 292);
+            this.rbMultas.Name = "rbMultas";
+            this.rbMultas.Size = new System.Drawing.Size(131, 30);
+            this.rbMultas.TabIndex = 14;
+            this.rbMultas.Text = "Nº Multas";
+            this.rbMultas.UseVisualStyleBackColor = true;
+            // 
+            // rbDatosLibros
+            // 
+            this.rbDatosLibros.AutoSize = true;
+            this.rbDatosLibros.Location = new System.Drawing.Point(17, 328);
+            this.rbDatosLibros.Name = "rbDatosLibros";
+            this.rbDatosLibros.Size = new System.Drawing.Size(152, 30);
+            this.rbDatosLibros.TabIndex = 15;
+            this.rbDatosLibros.TabStop = true;
+            this.rbDatosLibros.Text = "Datos libros";
+            this.rbDatosLibros.UseVisualStyleBackColor = true;
+            // 
             // Andres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 671);
+            this.ClientSize = new System.Drawing.Size(1502, 663);
+            this.Controls.Add(this.rbDatosLibros);
+            this.Controls.Add(this.rbMultas);
+            this.Controls.Add(this.rbPrestamos);
+            this.Controls.Add(this.rbDPersonales);
             this.Controls.Add(this.buttonConsulta);
             this.Controls.Add(this.buttonConectar);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Andres";
@@ -187,16 +172,13 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button buttonConectar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Button buttonConsulta;
+        private System.Windows.Forms.RadioButton rbDPersonales;
+        private System.Windows.Forms.RadioButton rbPrestamos;
+        private System.Windows.Forms.RadioButton rbMultas;
+        private System.Windows.Forms.RadioButton rbDatosLibros;
     }
 }
