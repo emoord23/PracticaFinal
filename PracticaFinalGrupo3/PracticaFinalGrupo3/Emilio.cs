@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
-using MySql.cli
+
 
 namespace PracticaFinalGrupo3
 {
@@ -17,6 +17,11 @@ namespace PracticaFinalGrupo3
         public Emilio()
         {
             InitializeComponent();
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
 
     }
