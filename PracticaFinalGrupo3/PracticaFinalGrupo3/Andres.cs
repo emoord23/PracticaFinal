@@ -46,8 +46,7 @@ namespace PracticaFinalGrupo3
         {
             if (conectado)
             {
-                
-
+               
             }
         }
 

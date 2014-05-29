@@ -18,33 +18,5 @@ namespace PracticaFinalGrupo3
                 conectar.Open();
                 return conectar;
         }
-
-        public static DataGridView meteConsulta(DataGridView control, MySqlConnection conexion, String consulta)
-        {
-            MySqlCommand cmd;
-            MySqlDataReader reader;
-            try
-            {
-                cmd = new MySqlCommand(consulta, conexion);
-                reader = cmd.ExecuteReader();
-                control.ColumnCount = reader.FieldCount;
-                Object[] objetos = new Object[reader.FieldCount];
-                for (int i = 0; i < objetos.Length; i++)
-                {
-                    if (reader.Read())
-                    {
-                        objetos[i] = reader.GetValue(i);
-                    }
-                }
-                control.Rows.Add(objetos);
-                reader.Close();
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Error:" + exception.Message);
-            }
-            return control;
-        }
     }
 }
