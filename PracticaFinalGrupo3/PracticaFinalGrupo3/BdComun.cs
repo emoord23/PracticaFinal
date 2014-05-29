@@ -24,17 +24,25 @@ namespace PracticaFinalGrupo3
 
         public static void meteConsulta(DataGridView dgvControl, MySqlConnection conexion, string consulta)
         {
+            
             DataSet dsConsulta;
             MySqlDataAdapter daConsulta;
+            try
+            {
+                daConsulta = new MySqlDataAdapter(consulta, conexion);
 
-            daConsulta = new MySqlDataAdapter(consulta, conexion);
+                dsConsulta = new DataSet();
+                daConsulta.Fill(dsConsulta, "consulta");
+                dgvControl.DataSource = dsConsulta;
+                dgvControl.DataMember = "consulta";
+             
 
-            dsConsulta = new  DataSet();
-            daConsulta.Fill(dsConsulta, "consulta");
-            dgvControl.DataSource = dsConsulta;
-            dgvControl.DataMember="consulta";
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error al mostrar datos :" + exception.Message);
+            }
+
         }
-
-
     }
 }

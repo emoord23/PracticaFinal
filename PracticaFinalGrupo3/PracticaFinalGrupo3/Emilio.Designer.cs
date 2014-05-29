@@ -34,6 +34,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,14 +44,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(333, 125);
+            this.dataGridView1.Location = new System.Drawing.Point(302, 160);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(966, 448);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(137, 12);
+            this.button1.Location = new System.Drawing.Point(145, 64);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(151, 38);
             this.button1.TabIndex = 1;
@@ -59,9 +61,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(136, 125);
+            this.button2.Location = new System.Drawing.Point(138, 186);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(152, 38);
+            this.button2.Size = new System.Drawing.Size(157, 38);
             this.button2.TabIndex = 2;
             this.button2.Text = "filtrar por editorial";
             this.button2.UseVisualStyleBackColor = true;
@@ -69,9 +71,9 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(1116, 65);
+            this.button3.Location = new System.Drawing.Point(1116, 64);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(152, 38);
+            this.button3.Size = new System.Drawing.Size(152, 90);
             this.button3.TabIndex = 3;
             this.button3.Text = "enviar";
             this.button3.UseVisualStyleBackColor = true;
@@ -79,24 +81,51 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 169);
+            this.textBox1.Location = new System.Drawing.Point(138, 160);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(151, 20);
+            this.textBox1.Size = new System.Drawing.Size(157, 20);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(487, 56);
+            this.textBox2.Location = new System.Drawing.Point(302, 64);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(623, 63);
+            this.textBox2.Size = new System.Drawing.Size(808, 90);
             this.textBox2.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label1.Location = new System.Drawing.Point(534, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(330, 33);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "DELEGADO BROWSER";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(141, 134);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Introduce la editorial:";
             // 
             // Emilio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PracticaFinalGrupo3.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1373, 912);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button3);
@@ -119,5 +148,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

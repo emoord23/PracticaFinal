@@ -28,95 +28,32 @@ namespace PracticaFinalGrupo3
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* MySqlCommand command;
-            MySqlDataReader datos;
-            string consulta="";
-            try
-                {
-                    consulta ="select * from libro";
-                    command = new MySqlCommand(consulta, conexion);
-                    datos = command.ExecuteReader();
-                    dataGridView1.ColumnCount = datos.FieldCount;
-
-                    dataGridView1.Rows.Clear();
-                    dataGridView1.Rows.Add("id_libro", "ISBN", "Titulo", "Editorial", "aas", "asa");
-                    
-                while (datos.Read())
-                    {
-                      
-                        dataGridView1.Rows.Add(datos.GetValue(0), datos.GetValue(1), datos.GetValue(2), datos.GetValue(3),datos.GetValue(4),datos.GetValue(5));
-                    }
-                    datos.Close();
-
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show("Error al mostrar datos: " + exception.Message);
-                }*/
-
+           
+            //Muestra la tabla libro al darle al boton
             BdComun.meteConsulta(dataGridView1, conexion, "select * from libro");
             }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            MySqlCommand command;
-            MySqlDataReader datos;
-            string consulta = textBox2.Text;
-            string campo;
-           
-            try
-            {
-
-                consulta = consulta;
-                command = new MySqlCommand(consulta, conexion);
-                datos = command.ExecuteReader();
-                dataGridView1.ColumnCount = datos.FieldCount;
-                dataGridView1.Rows.Clear();
-                dataGridView1.Rows.Add("id_libro", "ISBN", "Titulo", "Editorial", "aas", "asa");
-                    
-
-                while (datos.Read())
-                {
-                    dataGridView1.Rows.Add(datos.GetValue(0), datos.GetValue(1), datos.GetValue(2), datos.GetValue(3), datos.GetValue(4), datos.GetValue(5));
-                }
-                datos.Close();
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Error al mostrar datos :" + exception.Message);
-            }
+            
+          
+                string consulta = textBox2.Text;
+                BdComun.meteConsulta(dataGridView1, conexion, consulta);
+               
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
 
-            MySqlCommand command;
-            MySqlDataReader datos;
-            string consulta = "";
-            string campo;
             string editorial = textBox1.Text;
-            try
-            {
+           BdComun.meteConsulta(dataGridView1, conexion, "select editorial,titulo from libro where editorial='" + editorial +"'");
 
-                consulta ="select editorial,titulo from libro where editorial='" + editorial +"'";
-                command = new MySqlCommand(consulta, conexion);
-                datos = command.ExecuteReader();
-                dataGridView1.ColumnCount = datos.FieldCount;
-                dataGridView1.Rows.Clear();
-                dataGridView1.Rows.Add("Editorial", "Nº de libros");
+               
+        }
 
-                while (datos.Read())
-                {
-                    dataGridView1.Rows.Add(datos.GetValue(0), datos.GetValue(1));
-                }
-                datos.Close();
+        private void label1_Click(object sender, EventArgs e)
+        {
 
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Error al mostrar datos :" + exception.Message);
-            }
         }
         }    
 }
