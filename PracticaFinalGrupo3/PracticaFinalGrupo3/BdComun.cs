@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using MySql.Data;
@@ -21,17 +22,17 @@ namespace PracticaFinalGrupo3
                 conectar.Open();
                 return conectar;
         }
+
         public static void meteConsulta(DataGridView dgvControl, MySqlConnection conexion, string consulta)
         {
             DataSet dsConsulta;
             MySqlDataAdapter daConsulta;
-
             daConsulta = new MySqlDataAdapter(consulta, conexion);
-
             dsConsulta = new DataSet();
             daConsulta.Fill(dsConsulta, "consulta");
             dgvControl.DataSource = dsConsulta;
             dgvControl.DataMember = "consulta";
         }
+
     }
 }
