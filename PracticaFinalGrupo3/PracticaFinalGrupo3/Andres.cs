@@ -16,6 +16,10 @@ namespace PracticaFinalGrupo3
         MySqlConnection conn;
         int tipoConsulta = 0;
         bool conectado = false;
+        String[] consulta = new String[] {"SELECT * FROM socio ORDER BY socio.nombre ASC, socio.apellido ASC",
+                                          "SELECT socio.nombre, socio.apellido, libro.titulo, libro.editorial, socio_libro.fecha_prestamo, socio_libro.fecha_limite, socio_libro.fecha_devolucion FROM socio_libro, socio, libro WHERE socio_libro.id_libro = libro.id_libro AND socio.codigo_socio = socio_libro.codigo_socio ORDER BY socio.nombre ASC, socio.apellido ASC, libro.titulo ASC",
+                                          "SELECT socio.nombre, socio.apellido, socio.num_multas FROM socio ORDER BY socio.nombre ASC, socio.apellido ASC",
+                                          "SELECT libro.titulo, libro.editorial FROM libro ORDER BY libro.titulo ASC"};
 
         public Andres()
         {
@@ -46,34 +50,13 @@ namespace PracticaFinalGrupo3
         {
             if (conectado)
             {
-                BdComun.meteConsulta(dataGridView1, conn, "SELECT * FROM socio_libro");
-                //MySqlCommand cmd;
-                //MySqlDataReader reader;
-                //String consulta = "";
-                //try
-                //{
-                //    switch (tipoConsulta)
-                //    {
-                //        case 0: { consulta = "SELECT socio.nombre, socio.apellido, socio.direccion, socio.telefono FROM socio ORDER BY socio.nombre ASC"; } break;
-                //        case 1: { consulta = "SELECT socio.nombre, socio.apellido, libro.titulo, socio_libro.fecha_prestamo, socio_libro.fecha_limite, socio_libro.fecha_devolucion FROM socio_libro, libro, socio WHERE socio.codigo_socio = socio_libro.codigo_socio AND socio_libro.id_libro = libro.id_libro ORDER BY socio.nombre ASC"; } break;
-                //        case 2: { consulta = "SELECT socio.nombre, socio.apellido, COUNT(socio_libro.id_libro) as 'Nº Multas' FROM socio_libro, libro, socio WHERE socio_libro.codigo_socio = socio.codigo_socio AND socio_libro.id_libro = libro.id_libro AND socio_libro.fecha_limite < socio_libro.fecha_devolucion GROUP BY socio.nombre, socio.apellido ORDER BY COUNT(socio_libro.id_libro) DESC"; } break;
-                //        case 3: { } break;
-                //    }
-                //    cmd = new MySqlCommand(consulta, conn);
-                //    reader = cmd.ExecuteReader();
-                //    dataGridView1.ColumnCount = reader.FieldCount;
-
-                //    while (reader.Read())
-                //    {
-                //        dataGridView1.Rows.Add(reader.GetValue(0), reader.GetValue(1), reader.GetValue(2), reader.GetValue(3));
-                //    }
-                //    reader.Close();
-
-                //}
-                //catch (Exception exception)
-                //{
-                //    MessageBox.Show("Error:" + exception.Message);
-                //}
+                switch (tipoConsulta)
+                {
+                    case 0: { BdComun.meteConsulta(dataGridView1, conn, consulta[0]); } break;
+                    case 1: { BdComun.meteConsulta(dataGridView1, conn, consulta[1]); } break;
+                    case 2: { BdComun.meteConsulta(dataGridView1, conn, consulta[2]); } break;
+                    case 3: { BdComun.meteConsulta(dataGridView1, conn, consulta[3]); } break;
+                }
             }
         }
 

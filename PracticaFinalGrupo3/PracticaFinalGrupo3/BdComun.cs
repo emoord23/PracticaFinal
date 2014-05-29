@@ -8,10 +8,7 @@ using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using MySql.Data;
 using System.Data;
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
 
 namespace PracticaFinalGrupo3
 {
@@ -37,9 +34,5 @@ namespace PracticaFinalGrupo3
             dgvControl.DataSource = dsConsulta;
             dgvControl.DataMember = "consulta";
         }
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
     }
 }
