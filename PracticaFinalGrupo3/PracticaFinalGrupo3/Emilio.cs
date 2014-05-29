@@ -28,7 +28,7 @@ namespace PracticaFinalGrupo3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MySqlCommand command;
+           /* MySqlCommand command;
             MySqlDataReader datos;
             string consulta="";
             try
@@ -38,9 +38,10 @@ namespace PracticaFinalGrupo3
                     datos = command.ExecuteReader();
                     dataGridView1.ColumnCount = datos.FieldCount;
 
-                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows.Clear();
                     dataGridView1.Rows.Add("id_libro", "ISBN", "Titulo", "Editorial", "aas", "asa");
-                    while (datos.Read())
+                    
+                while (datos.Read())
                     {
                       
                         dataGridView1.Rows.Add(datos.GetValue(0), datos.GetValue(1), datos.GetValue(2), datos.GetValue(3),datos.GetValue(4),datos.GetValue(5));
@@ -51,26 +52,32 @@ namespace PracticaFinalGrupo3
                 catch (Exception exception)
                 {
                     MessageBox.Show("Error al mostrar datos: " + exception.Message);
-                }
+                }*/
+
+            BdComun.meteConsulta(dataGridView1, conexion, "select * from libro");
             }
 
         private void button3_Click(object sender, EventArgs e)
         {
             MySqlCommand command;
             MySqlDataReader datos;
-            string consulta = "";
+            string consulta = textBox2.Text;
             string campo;
+           
             try
             {
-                consulta = "select editorial,count(*) as 'nº de libros' from libro where editorial=";
+
+                consulta = consulta;
                 command = new MySqlCommand(consulta, conexion);
                 datos = command.ExecuteReader();
                 dataGridView1.ColumnCount = datos.FieldCount;
-
+                dataGridView1.Rows.Clear();
+                dataGridView1.Rows.Add("id_libro", "ISBN", "Titulo", "Editorial", "aas", "asa");
+                    
 
                 while (datos.Read())
                 {
-                    dataGridView1.Rows.Add(datos.GetValue(0), datos.GetValue(1));
+                    dataGridView1.Rows.Add(datos.GetValue(0), datos.GetValue(1), datos.GetValue(2), datos.GetValue(3), datos.GetValue(4), datos.GetValue(5));
                 }
                 datos.Close();
 
@@ -84,6 +91,32 @@ namespace PracticaFinalGrupo3
         private void button2_Click(object sender, EventArgs e)
         {
 
+            MySqlCommand command;
+            MySqlDataReader datos;
+            string consulta = "";
+            string campo;
+            string editorial = textBox1.Text;
+            try
+            {
+
+                consulta ="select editorial,titulo from libro where editorial='" + editorial +"'";
+                command = new MySqlCommand(consulta, conexion);
+                datos = command.ExecuteReader();
+                dataGridView1.ColumnCount = datos.FieldCount;
+                dataGridView1.Rows.Clear();
+                dataGridView1.Rows.Add("Editorial", "Nº de libros");
+
+                while (datos.Read())
+                {
+                    dataGridView1.Rows.Add(datos.GetValue(0), datos.GetValue(1));
+                }
+                datos.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Error al mostrar datos :" + exception.Message);
+            }
         }
         }    
 }
