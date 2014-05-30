@@ -23,6 +23,8 @@ namespace PracticaFinalGrupo3
                 return conectar;
         }
 
+
+
         public static void meteConsulta(DataGridView dgvControl, MySqlConnection conexion, string consulta)
         {
             DataSet dsConsulta;
