@@ -22,36 +22,8 @@ namespace PracticaFinalGrupo3
                 conectar.Open();
                 return conectar;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 
-
-        public static void meteConsulta(DataGridView dgvControl, MySqlConnection conexion, string consulta)
-        {
-            
-            DataSet dsConsulta;
-            MySqlDataAdapter daConsulta;
-            try
-            {
-                daConsulta = new MySqlDataAdapter(consulta, conexion);
-
-                dsConsulta = new DataSet();
-                daConsulta.Fill(dsConsulta, "consulta");
-                dgvControl.DataSource = dsConsulta;
-                dgvControl.DataMember = "consulta";
-             
-
-            }
-            catch (Exception exception)
-            {
-                MessageBox.Show("Error al mostrar datos :" + exception.Message);
-            }
-
-=======
-=======
-
->>>>>>> origin/master
         public static void meteConsulta(DataGridView dgvControl, MySqlConnection conexion, string consulta)
         {
             DataSet dsConsulta;
@@ -61,7 +33,6 @@ namespace PracticaFinalGrupo3
             daConsulta.Fill(dsConsulta, "consulta");
             dgvControl.DataSource = dsConsulta;
             dgvControl.DataMember = "consulta";
->>>>>>> origin/master
         }
 
     }
