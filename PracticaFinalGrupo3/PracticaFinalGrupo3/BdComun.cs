@@ -26,7 +26,6 @@ namespace PracticaFinalGrupo3
 <<<<<<< HEAD
 
 
-
         public static void meteConsulta(DataGridView dgvControl, MySqlConnection conexion, string consulta)
         {
             
