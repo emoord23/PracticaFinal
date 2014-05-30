@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -333,11 +334,25 @@
             this.igual.Text = "=";
             this.igual.UseVisualStyleBackColor = false;
             this.igual.Click += new System.EventHandler(this.igual_Click);
+=======
+            this.button1 = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(313, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 175);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+>>>>>>> b41a17d1666c9d462ac39fd588f97f505e13c059
             // 
             // Javi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(324, 462);
@@ -371,11 +386,19 @@
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
+=======
+            this.ClientSize = new System.Drawing.Size(704, 560);
+            this.Controls.Add(this.button1);
+            this.Name = "Javi";
+            this.Text = "Javi";
+            this.ResumeLayout(false);
+>>>>>>> b41a17d1666c9d462ac39fd588f97f505e13c059
 
         }
 
         #endregion
 
+<<<<<<< HEAD
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem archivoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
@@ -401,5 +424,8 @@
         private System.Windows.Forms.Button suma;
         private System.Windows.Forms.Button igual;
 
+=======
+        private System.Windows.Forms.Button button1;
+>>>>>>> b41a17d1666c9d462ac39fd588f97f505e13c059
     }
 }
